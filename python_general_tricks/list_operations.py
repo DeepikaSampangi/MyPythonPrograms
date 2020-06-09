@@ -14,3 +14,16 @@ print(" ".join(input_list_str))
 data = [2, 3, 9]
 temp = [[x for x in[data]] for x in range(3)]
 print (temp)
+
+
+# List of missing elements in two lists
+
+input_list1: list = ['a','b','c','d']
+input_list2: list = ['e','f','a','b']
+
+set1: set = set(input_list1)
+set2: set = set(input_list2)
+
+diff_list: list = list( set1.symmetric_difference(set2))
+
+print(f"List of missing elements is {diff_list}")
