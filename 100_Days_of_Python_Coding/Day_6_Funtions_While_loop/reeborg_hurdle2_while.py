@@ -18,5 +18,5 @@ def puzzle():
     turn_left()
 
 
-while not at_goal:
+while not at_goal():
     puzzle()
