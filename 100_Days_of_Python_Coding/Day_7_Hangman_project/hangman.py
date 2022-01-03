@@ -1,7 +1,70 @@
 import random
 
 # from hangman_art import logo, stages
-
+stages = [
+    """
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+""",
+    """
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+""",
+    """
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+""",
+    """
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========""",
+    """
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+""",
+    """
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+""",
+    """
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+""",
+]
 word_list = ["aardvark", "baboon", "camel"]
 
 chosen_word = random.choice(word_list)
@@ -10,22 +73,29 @@ chosen_word = random.choice(word_list)
 answer = ["_" for _ in range(len(chosen_word))]
 print(" ".join(answer))
 
-# print(logo)
-lives = 5
-while lives > 0:
+lives = 6
+print(stages[lives])
+
+game_over = False
+
+while not game_over:
     guess = input("Enter the letter guessed:").lower()
+    lives_flag = True
     for i in range(len(chosen_word)):
         if chosen_word[i] == guess:
             answer[i] = guess
+            lives_flag = False
 
     if "_" not in answer:
         print(f"You won")
-        print(" ".join(answer))
-        break
-    else:
+        game_over = True
+    if lives_flag:
         lives -= 1
-        print(" ".join(answer))
+    if lives == 0:
+        game_over = True
+    print(stages[lives])
+    print(" ".join(answer))
 
 
 if "_" in answer:
-    print(f"Game over, Solution is {answer}")
+    print(f"Game over, Solution is {chosen_word}")
