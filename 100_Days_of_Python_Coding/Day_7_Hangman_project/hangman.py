@@ -17,10 +17,15 @@ while lives > 0:
     for i in range(len(chosen_word)):
         if chosen_word[i] == guess:
             answer[i] = guess
-        if "_" not in answer:
-            print("Game Over")
-    lives -= 1
-    print(" ".join(answer))
+
+    if "_" not in answer:
+        print(f"You won")
+        print(" ".join(answer))
+        break
+    else:
+        lives -= 1
+        print(" ".join(answer))
+
 
 if "_" in answer:
-    print("Game over")
+    print(f"Game over, Solution is {answer}")
