@@ -23,17 +23,14 @@ while not game_over:
         for i in range(len(chosen_word)):
             if chosen_word[i] == guess:
                 answer[i] = guess
-
+        print(" ".join(answer))
         if "_" not in answer:
             print(f"You won")
             game_over = True
         if guess not in chosen_word:
             lives -= 1
             print(f"{guess} not in the Word, you lose a life")
-        if lives == 0:
-            game_over = True
+            if lives == 0:
+                game_over = True
+                print(f"Game over, Solution is {chosen_word}")
     print(stages[lives])
-    print(" ".join(answer))
-
-if "_" in answer:
-    print(f"Game over, Solution is {chosen_word}")
