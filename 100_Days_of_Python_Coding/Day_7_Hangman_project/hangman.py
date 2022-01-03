@@ -1,76 +1,11 @@
 import random
-
-# from hangman_art import logo, stages
-stages = [
-    """
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========""",
-    """
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-""",
-]
-word_list = ["aardvark", "baboon", "camel"]
+from hangman_art import logo, stages
+from hangman_word import word_list
 
 chosen_word = random.choice(word_list)
 
-
 answer = ["_" for _ in range(len(chosen_word))]
+print(logo)
 print(" ".join(answer))
 
 lives = 6
@@ -93,7 +28,6 @@ while not game_over:
         game_over = True
     print(stages[lives])
     print(" ".join(answer))
-
 
 if "_" in answer:
     print(f"Game over, Solution is {chosen_word}")
