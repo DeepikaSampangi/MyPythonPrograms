@@ -80,16 +80,14 @@ game_over = False
 
 while not game_over:
     guess = input("Enter the letter guessed:").lower()
-    lives_flag = True
     for i in range(len(chosen_word)):
         if chosen_word[i] == guess:
             answer[i] = guess
-            lives_flag = False
 
     if "_" not in answer:
         print(f"You won")
         game_over = True
-    if lives_flag:
+    if guess not in chosen_word:
         lives -= 1
     if lives == 0:
         game_over = True
