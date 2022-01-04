@@ -21,4 +21,7 @@ def greet_with_name_loc(name: str, location: str):
     print(f"What is it like at {location}")
 
 
+greet_with_name_loc("universe", "milkyway")
+greet_with_name_loc("milkyway", "universe")
 greet_with_name_loc(name="universe", location="milkyway")
+greet_with_name_loc(location="milkyway", name="universe")
