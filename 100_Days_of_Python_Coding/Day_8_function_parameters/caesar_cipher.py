@@ -1,3 +1,5 @@
+from art import logo
+
 alphabet = [
     "a",
     "b",
@@ -26,12 +28,7 @@ alphabet = [
     "y",
     "z",
 ]
-
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
-# TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar().
+print(logo)
 
 
 def caesar(text: str, shift: int, direction: str):
@@ -50,5 +47,11 @@ def caesar(text: str, shift: int, direction: str):
     print(f"The {direction}d text is {end_text}")
 
 
-# TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
-caesar(text=text, shift=shift, direction=direction)
+while True:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    caesar(text=text, shift=shift, direction=direction)
+    ans = input("Want to try again (yes/no):")
+    if ans == "no":
+        break
