@@ -18,4 +18,7 @@ empyt_dict = {}
 programming_dictionary["Bug"] = "Error"
 print(programming_dictionary)
 
-#Loop through a dictionary.
+# Loop through a dictionary.
+for key in programming_dictionary:
+    print(key)
+    print(programming_dictionary[key])
