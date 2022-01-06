@@ -22,11 +22,17 @@ def divide(n1: int, n2: int) -> float:
 cal_ops = {"+": add, "-": subtract, "*": multiply, "/": divide}
 
 num1 = int(input("What's the first number?: "))
-print("Select the operation to be performed")
-for key in cal_ops:
-    print(key)
-ops = input("Operation to be performed: ")
-cal_func = cal_ops[ops]
-num2 = int(input("What's the second number?: "))
+ans = num1
+while True:
+    print("Select the operation to be performed")
+    for key in cal_ops:
+        print(key)
+    ops = input("Operation to be performed: ")
+    cal_func = cal_ops[ops]
+    next_num = int(input("What's the next number?: "))
 
-print(f"{num1} {ops} {num2} = {cal_func(num1, num2)}")
+    print(f"{ans} {ops} {next_num} = {cal_func(ans, next_num)}")
+    ans = cal_func(ans, next_num)
+    resp = input("Type 'y' to continue calculating with the prev, type 'n' to exit: ")
+    if resp != "y":
+        break
