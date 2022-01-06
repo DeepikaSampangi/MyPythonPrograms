@@ -22,7 +22,6 @@ def divide(n1: int, n2: int) -> float:
 cal_ops = {"+": add, "-": subtract, "*": multiply, "/": divide}
 
 num1 = int(input("What's the first number?: "))
-ans = num1
 while True:
     print("Select the operation to be performed")
     for key in cal_ops:
@@ -31,8 +30,10 @@ while True:
     cal_func = cal_ops[ops]
     next_num = int(input("What's the next number?: "))
 
-    print(f"{ans} {ops} {next_num} = {cal_func(ans, next_num)}")
-    ans = cal_func(ans, next_num)
+    ans = cal_func(num1, next_num)
+    print(f"{num1} {ops} {next_num} = {ans}")
     resp = input("Type 'y' to continue calculating with the prev, type 'n' to exit: ")
     if resp != "y":
         break
+    else:
+        num1 = ans
