@@ -77,8 +77,12 @@ while True:
             print(f"Your cards: {user_cards}, current score: {sum(user_cards)}")
             print(f"Computer's first card : {computer_cards[0]}")
             if sum(user_cards) > 21:
-                print("You lost")
-                break
+                if 11 in user_cards:
+                    user_cards.remove(11)
+                    user_cards.append(1)
+                else:
+                    print("You lost")
+                    break
             else:
                 user_resp = input("Type 'y' to get another card, type 'n' to pass : ")
             if user_resp == "y":
@@ -92,7 +96,11 @@ while True:
                     f"Computer final hand: {computer_cards}, final score: {sum(computer_cards)}"
                 )
                 if sum(user_cards) > 21:
-                    print("You lost")
+                    if 11 in user_cards:
+                        user_cards.remove(11)
+                        user_cards.append(1)
+                    else:
+                        print("You lost")
                 elif sum(user_cards) == sum(computer_cards):
                     print("It is a Draw")
                 else:
