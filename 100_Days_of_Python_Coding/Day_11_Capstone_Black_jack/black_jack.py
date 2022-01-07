@@ -71,12 +71,16 @@ while True:
         user_cards = []
         computer_cards = []
         user_cards.append(random.choice(cards))
+        computer_cards.append(random.choice(cards))
         while True:
             user_cards.append(random.choice(cards))
             print(f"Your cards: {user_cards}, current score: {sum(user_cards)}")
-            computer_cards.append(random.choice(cards))
-            print(f"Computer's first card : {computer_cards}")
-            user_resp = input("Type 'y' to get another card, type 'n' to pass : ")
+            print(f"Computer's first card : {computer_cards[0]}")
+            if sum(user_cards) > 21:
+                print("You lost")
+                break
+            else:
+                user_resp = input("Type 'y' to get another card, type 'n' to pass : ")
             if user_resp == "y":
                 continue
             else:
@@ -92,7 +96,10 @@ while True:
                 elif sum(user_cards) == sum(computer_cards):
                     print("It is a Draw")
                 else:
-                    if sum(user_cards) > sum(computer_cards):
+                    if (
+                        sum(user_cards) > sum(computer_cards)
+                        or sum(computer_cards) > 21
+                    ):
                         print("You win")
                     else:
                         print("You lost")
