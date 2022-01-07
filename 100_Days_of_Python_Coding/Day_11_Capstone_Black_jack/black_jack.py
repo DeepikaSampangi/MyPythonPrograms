@@ -89,7 +89,7 @@ while True:
                 continue
             else:
                 computer_cards.append(random.choice(cards))
-                while sum(computer_cards) < 16:
+                while sum(computer_cards) < 17:
                     computer_cards.append(random.choice(cards))
                 print(f"Your final hand: {user_cards}, final score: {sum(user_cards)}")
                 print(
