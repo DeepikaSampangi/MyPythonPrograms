@@ -1,4 +1,5 @@
 import random
+from num_guess_art import logo
 
 actual = random.choice([i for i in range(1, 101)])
 
@@ -16,17 +17,18 @@ def guess_num(attempts):
             break
         attempts -= 1
         if attempts == 0:
-            print("You've run out of guessess, you lose.")
+            print("You've run out of guessess, you lose. Answer is {actual}")
             break
         else:
             print("Guess Again.")
 
 
-print("Welcome to the NUmber Guessing Game!")
+print(logo)
+print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100")
 difficulty = input("Choose a difficulty. Type 'easy' or 'hard' : ")
-
+turns = {"hard": 5, "easy": 10}
 if difficulty == "hard":
-    guess_num(5)
+    guess_num(turns["hard"])
 elif difficulty == "easy":
-    guess_num(10)
+    guess_num(turns["easy"])
