@@ -28,6 +28,7 @@
 # age = input("How old are you?")
 # if age > 18:
 # print("You can drive at age {age}.")
+# Solution f-string f"You can drive at {age}."
 
 # #Print is Your Friend
 # pages = 0
