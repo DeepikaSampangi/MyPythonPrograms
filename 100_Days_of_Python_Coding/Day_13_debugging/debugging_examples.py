@@ -22,6 +22,7 @@
 #   print("You are a millenial.")
 # elif year > 1994:
 #   print("You are a Gen Z.")
+# Solution : elif year >= 1994
 
 # # Fix the Errors
 # age = input("How old are you?")
