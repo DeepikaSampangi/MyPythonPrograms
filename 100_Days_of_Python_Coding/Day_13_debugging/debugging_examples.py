@@ -28,7 +28,7 @@
 # age = input("How old are you?")
 # if age > 18:
 # print("You can drive at age {age}.")
-# Solution f-string f"You can drive at {age}."
+# Solution : f-string f"You can drive at {age}."
 
 # #Print is Your Friend
 # pages = 0
@@ -37,6 +37,10 @@
 # word_per_page == int(input("Number of words per page: "))
 # total_words = pages * word_per_page
 # print(total_words)
+# Solution :
+# word_per_page = int(input("Number of words per page: "))
+# print(f"Pages = {pages}")
+# print(f"words_per_page = {word_per_page}")
 
 # #Use a Debugger
 # def mutate(a_list):
