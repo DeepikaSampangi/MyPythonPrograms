@@ -6,21 +6,28 @@ print(logo)
 data_len = len(data)
 score = 0
 a_dict = data[random.randint(0, data_len)]
-a_name = a_dict["name"]
-a_description = a_dict["description"]
-a_country = a_dict["country"]
 
-b_dict = data[random.randint(0, data_len)]
-print(f"Compare A: {a_name}, a {a_description}, from {a_country}.")
-# print(vs)
-# print(
-#     f"Compare B: {data[b_index].name}, a {data[b_index].description}, from {data[b_index].country}."
-# )
+while True:
+    b_dict = data[random.randint(0, data_len)]
+    print("Compare A: {name}, a {description}, from {country}.".format(**a_dict))
+    print(vs)
+    print("Compare B: {name}, a {description}, from {country}.".format(**b_dict))
 
-# user_input = input("Who has more followers? Type 'A' or 'B': ")
-# if user_input == "A":
-#     if data[a_index].follower_count > data[b_index].follower_count:
-#         score += 1
-#         print(f"You're right! Current Score: {score}")
-#     else:
-#         print(f"Sorry, that's wrong. Final Score: {score}")
+    user_input = input("Who has more followers? Type 'A' or 'B': ")
+    if user_input == "A":
+        if a_dict["follower_count"] > b_dict["follower_count"]:
+            score += 1
+            print(f"You're right! Current Score: {score}")
+        else:
+            print(f"Sorry, that's wrong. Final Score: {score}")
+            break
+    elif user_input == "B":
+        if b_dict["follower_count"] > a_dict["follower_count"]:
+            score += 1
+            print(f"You're right! Current Score: {score}")
+            a_dict = b_dict
+        else:
+            print(f"Sorry, that's wrong. Final Score: {score}")
+            break
+    else:
+        break
