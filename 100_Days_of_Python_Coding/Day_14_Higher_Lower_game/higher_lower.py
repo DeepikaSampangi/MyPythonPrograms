@@ -8,6 +8,7 @@ score = 0
 a_dict = data[random.randint(0, data_len)]
 
 while True:
+    print("----------------------------------------")
     b_dict = data[random.randint(0, data_len)]
     print("Compare A: {name}, a {description}, from {country}.".format(**a_dict))
     print(vs)
@@ -31,3 +32,4 @@ while True:
             break
     else:
         break
+    print("----------------------------------------")
