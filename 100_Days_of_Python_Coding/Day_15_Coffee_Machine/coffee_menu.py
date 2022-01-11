@@ -25,9 +25,8 @@ MENU = {
 }
 
 resource_details = {
-    "Water": {"qty": 100, "metric": "ml"},
-    "Milk": {"qty": 50, "metric": "ml"},
-    "Coffee": {"qty": 76, "metric": "g"},
-    "Money": {"qty": 2.5, "metric": "$"},
+    "water": {"qty": 500, "metric": "ml"},
+    "milk": {"qty": 250, "metric": "ml"},
+    "coffee": {"qty": 76, "metric": "g"},
+    "money": {"qty": 2.5, "metric": "$"},
 }
-

@@ -1,4 +1,4 @@
-from coffee_menu import MENU, resource_details, dollar_value
+from coffee_menu import MENU, resource_details
 
 
 def print_report():
@@ -14,7 +14,7 @@ def get_unavilable(type):
         if MENU[type]["ingredients"][item] < resource_details[item]["qty"]:
             continue
         else:
-            items_unavail.append(MENU[type]["ingredients"][item])
+            items_unavail.append(item)
         return items_unavail
 
 
@@ -33,16 +33,18 @@ def handle_payment(cost, qt, dimes, nickels, pennies):
             for item in items_unavail:
                 print(item)
             print("Money Refunded")
+            return False
         else:
-            resource_details["Money"]["qty"] += MENU[type]["cost"]
+            resource_details["money"]["qty"] += MENU[type]["cost"]
             print(f"Here is {payment_in_dollars-cost} in change")
+        return True
     else:
         print("Sorry thats's not enought money. Money Refunded.")
-    return
+        return False
 
 
 while True:
-    print("Type Report or off")
+    print("Type Report or off for other operations")
     type = input("What would you like? (espresso/latte/cappuccino): ")
     if type == "off":
         break
@@ -54,7 +56,7 @@ while True:
         dimes = int(input("How many dimes? "))
         nickels = int(input("How many nickels? "))
         pennies = int(input("How many pennies? "))
-        handle_payment(cost, qt, dimes, nickels, pennies)
-        make_coffee(type)
+        if handle_payment(cost, qt, dimes, nickels, pennies):
+            make_coffee(type)
     elif type == "report":
         print_report()
