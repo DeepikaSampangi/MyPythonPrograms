@@ -24,19 +24,18 @@ def make_coffee(type):
     print(f"Here is your {type}. Enjoy!")
 
 
-def handle_payment(cost, qt, dimes, nickels, pennies):
+def handle_payment(type):
+    cost = MENU[type]["cost"]
+    print(f"Make a payment of ${cost}")
+    print("Please insert coins.")
+    qt = int(input("How many quarters? "))
+    dimes = int(input("How many dimes? "))
+    nickels = int(input("How many nickels? "))
+    pennies = int(input("How many pennies? "))
     payment_in_dollars = qt * 0.25 + dimes * 0.1 + nickels * 0.5 + pennies * 0.01
     if cost < payment_in_dollars:
-        items_unavail = get_unavilable(type)
-        if items_unavail:
-            print("Sorry we are short of")
-            for item in items_unavail:
-                print(item)
-            print("Money Refunded")
-            return False
-        else:
-            resource_details["money"]["qty"] += MENU[type]["cost"]
-            print(f"Here is {payment_in_dollars-cost} in change")
+        resource_details["money"]["qty"] += MENU[type]["cost"]
+        print(f"Here is {payment_in_dollars-cost}$ in change")
         return True
     else:
         print("Sorry thats's not enought money. Money Refunded.")
@@ -49,14 +48,13 @@ while True:
     if type == "off":
         break
     elif type in MENU.keys():
-        cost = MENU[type]["cost"]
-        print(f"Make a payment of ${cost}")
-        print("Please insert coins.")
-        qt = int(input("How many quarters? "))
-        dimes = int(input("How many dimes? "))
-        nickels = int(input("How many nickels? "))
-        pennies = int(input("How many pennies? "))
-        if handle_payment(cost, qt, dimes, nickels, pennies):
-            make_coffee(type)
+        items_unavail = get_unavilable(type)
+        if items_unavail:
+            print("Sorry we are short of")
+            for item in items_unavail:
+                print(item)
+        else:
+            if handle_payment(type):
+                make_coffee(type)
     elif type == "report":
         print_report()
