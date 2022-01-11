@@ -21,28 +21,40 @@ def get_unavilable(type):
 def make_coffee(type):
     for item in MENU[type]["ingredients"]:
         resource_details[item]["qty"] -= MENU[type]["ingredients"][item]
+    print(f"Here is your {type}. Enjoy!")
 
-def handle_payment(type, paid):
-    resource_details["Money"]["qty"] += MENU[type]["cost"]
 
-def coffee_machine(type, paid):
-    items_unavail = get_unavilable(type)
-    if items_unavail:
-        print("Sorry we are short of")
-        for item in items_unavail:
-            print(item)
+def handle_payment(cost, qt, dimes, nickels, pennies):
+    payment_in_dollars = qt * 0.25 + dimes * 0.1 + nickels * 0.5 + pennies * 0.01
+    if cost < payment_in_dollars:
+        items_unavail = get_unavilable(type)
+        if items_unavail:
+            print("Sorry we are short of")
+            for item in items_unavail:
+                print(item)
+            print("Money Refunded")
+        else:
+            resource_details["Money"]["qty"] += MENU[type]["cost"]
+            print(f"Here is {payment_in_dollars-cost} in change")
     else:
+        print("Sorry thats's not enought money. Money Refunded.")
+    return
+
+
+while True:
+    print("Type Report or off")
+    type = input("What would you like? (espresso/latte/cappuccino): ")
+    if type == "off":
+        break
+    elif type in MENU.keys():
+        cost = MENU[type]["cost"]
+        print(f"Make a payment of ${cost}")
+        print("Please insert coins.")
+        qt = int(input("How many quarters? "))
+        dimes = int(input("How many dimes? "))
+        nickels = int(input("How many nickels? "))
+        pennies = int(input("How many pennies? "))
+        handle_payment(cost, qt, dimes, nickels, pennies)
         make_coffee(type)
-        handle_payment(type, paid)
-
-
-# user_choice = input("What would you like? (espresso/latte/cappuccino): ")
-
-# if user_choice == "espresso":
-#     #make espresso
-# elif user_choice == "latte":
-#     #make latte
-# elif user_choice == "cappuccino":
-#     #make cappuccino
-# else:
-#     print("Turned off")
+    elif type == "report":
+        print_report()
