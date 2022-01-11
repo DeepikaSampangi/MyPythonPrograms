@@ -24,10 +24,16 @@ MENU = {
     },
 }
 
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+# resources = {
+#     "water": 300,
+#     "milk": 200,
+#     "coffee": 100,
+# }
+resource_details = {
+    "Water": {"qty": 100, "metric": "ml"},
+    "Milk": {"qty": 50, "metric": "ml"},
+    "Coffee": {"qty": 76, "metric": "g"},
+    "Money": {"qty": 2.5, "metric": "$"},
 }
 
 dollar_value = {"Pennies": 0.01, "Nickel": 0.05, "Dime": 0.1, "Quarter": 0.25}
