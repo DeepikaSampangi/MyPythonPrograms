@@ -12,5 +12,5 @@ table.add_column(
 table.add_column(
     "Annual Rainfall", [600.5, 1146.4, 1714.7, 619.5, 1214.8, 646.9, 869.4]
 )
-
+table.align = "l"
 print(table)
