@@ -1,4 +1,11 @@
-import turtle
+# import turtle
 
-timmy = turtle.Turtle()
-print(timmy)
+# timmy = turtle.Turtle()
+# print(timmy)
+
+from turtle import Turtle, Screen
+
+timmy = Turtle()
+
+my_screen = Screen()
+print(my_screen.canvheight)
