@@ -1,5 +1,7 @@
 class User:
-    pass
+    def __init__(self):
+        # initialize the attributes
+        pass
 
 
 user_1 = User()
