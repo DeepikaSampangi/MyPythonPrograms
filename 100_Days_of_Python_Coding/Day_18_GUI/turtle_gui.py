@@ -12,7 +12,18 @@ def draw_square():
         tim.right(90)
 
 
-draw_square()
+# draw_square()
+
+
+def dashed_line():
+    for _ in range(15):
+        tim.forward(10)
+        tim.penup()
+        tim.forward(10)
+        tim.pendown()
+
+
+# dashed_line()
 
 screen = Screen()
 screen.exitonclick()
