@@ -6,6 +6,17 @@ tim = Turtle()
 tim.shape("turtle")
 tim.color("red")
 
+colours = [
+    "CornflowerBlue",
+    "DarkOrchid",
+    "IndianRed",
+    "DeepSkyBlue",
+    "LightSeaGreen",
+    "wheat",
+    "SlateGray",
+    "SeaGreen",
+]
+
 
 def draw_square():
     for _ in range(4):
@@ -37,14 +48,19 @@ def draw_all_shapes():
 
 # draw_all_shapes()
 
+directions = [0, 90, 180, 270]
+tim.pensize(15)
+tim.speed("fastest")
+
 
 def random_walk():
-    directions = [tim.forward(50), tim.backward(50), tim.right(50), tim.left(50)]
-    for _ in range(100):
-        random.choice(directions)
+    for _ in range(200):
+        tim.color(random.choice(colours))
+        tim.forward(30)
+        tim.setheading(random.choice(directions))
 
 
-random_walk()
+# random_walk()
 
 
 screen = Screen()
