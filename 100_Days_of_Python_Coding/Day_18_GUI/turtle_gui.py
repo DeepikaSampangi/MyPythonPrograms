@@ -1,3 +1,4 @@
+import random
 from turtle import Turtle, Screen
 
 tim = Turtle()
@@ -35,6 +36,15 @@ def draw_all_shapes():
 
 
 # draw_all_shapes()
+
+
+def random_walk():
+    directions = [tim.forward(50), tim.backward(50), tim.right(50), tim.left(50)]
+    for _ in range(100):
+        random.choice(directions)
+
+
+random_walk()
 
 
 screen = Screen()
