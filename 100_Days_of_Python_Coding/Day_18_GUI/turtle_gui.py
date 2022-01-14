@@ -26,11 +26,15 @@ def dashed_line():
 # dashed_line()
 
 
-for i in range(3, 10):
-    x = 360 / i
-    for _ in range(i):
-        tim.forward(100)
-        tim.right(x)
+def draw_all_shapes():
+    for i in range(3, 10):
+        x = 360 / i
+        for _ in range(i):
+            tim.forward(100)
+            tim.right(x)
+
+
+# draw_all_shapes()
 
 
 screen = Screen()
