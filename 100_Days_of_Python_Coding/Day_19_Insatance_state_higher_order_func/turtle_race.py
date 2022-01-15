@@ -30,5 +30,12 @@ while is_race_on:
     for turtle in turtle_list:
         random_direction = random.randint(0, 10)
         turtle.forward(random_direction)
+        if turtle.xcor() > 230:
+            is_race_on = False
+            win_col = turtle.pencolor()
+            if win_col == user_bet:
+                print(f"You guessed it right, {win_col} Turtle won")
+            else:
+                print(f"Oops you were wrong, {win_col} Turtle won")
 
 screen.exitonclick()
