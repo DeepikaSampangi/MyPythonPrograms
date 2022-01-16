@@ -1,16 +1,14 @@
-from turtle import Screen, Turtle
+from turtle import Screen, Turtle, position
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 
-start = 0
-snake_list = []
-for i in range(3):
-    snake_list.append(Turtle(shape="square"))
-    snake_list[i].color("white")
-    snake_list[i].setx(start)
-    start += 20
+starting_position = [(0, 0), (-20, 0), (-40, 0)]
+for pos in starting_position:
+    new_seg = Turtle(shape="square")
+    new_seg.color("white")
+    new_seg.goto(pos)
 
 screen.exitonclick()
