@@ -6,10 +6,15 @@ class Animal:
         print("Inhale, Exhale")
 
 
-class Fish:
+class Fish(Animal):
+    def __init__(self) -> None:
+        super().__init__()
+
     def swim(self):
         print("Moving in water")
 
 
 nemo = Fish()
 nemo.swim()
+print(nemo.num_eyes)
+nemo.breathe()
