@@ -1,9 +1,6 @@
 from mimetypes import init
 from turtle import Turtle
 
-
-UP = 90
-DOWN = 270
 MOVE_DISTANCE = 20
 
 
@@ -26,9 +23,9 @@ class Paddle:
             X_CORR *= -1
 
     def up(self):
-        self.player.setheading(UP)
-        self.player.forward(MOVE_DISTANCE)
+        new_y = self.player.ycor() + MOVE_DISTANCE
+        self.player.goto(self.player.xcor(), new_y)
 
     def down(self):
-        self.player.setheading(DOWN)
-        self.player.forward(MOVE_DISTANCE)
+        new_y = self.player.ycor() - MOVE_DISTANCE
+        self.player.goto(self.player.xcor(), new_y)
