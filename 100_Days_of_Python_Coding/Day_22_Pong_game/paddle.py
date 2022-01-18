@@ -24,8 +24,10 @@ class Paddle:
 
     def up(self):
         new_y = self.player.ycor() + MOVE_DISTANCE
-        self.player.goto(self.player.xcor(), new_y)
+        if new_y < 275:
+            self.player.goto(self.player.xcor(), new_y)
 
     def down(self):
         new_y = self.player.ycor() - MOVE_DISTANCE
-        self.player.goto(self.player.xcor(), new_y)
+        if new_y > -275:
+            self.player.goto(self.player.xcor(), new_y)
