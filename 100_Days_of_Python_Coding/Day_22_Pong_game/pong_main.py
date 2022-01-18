@@ -29,4 +29,8 @@ while game_is_on:
     pong_ball.move()
     screen.update()
 
+    # Detect Wall Collision
+    if pong_ball.ycor() > 280 or pong_ball.ycor() < -280:
+        pong_ball.bounce()
+
 screen.exitonclick()
