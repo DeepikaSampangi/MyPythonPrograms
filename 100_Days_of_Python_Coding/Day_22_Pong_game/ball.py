@@ -10,6 +10,7 @@ class PongBall(Turtle):
         self.color("red")
         self.x_move = 5
         self.y_move = 5
+        self.move_speed = 0.1
 
     def move(self):
         new_x = self.xcor() + self.x_move
