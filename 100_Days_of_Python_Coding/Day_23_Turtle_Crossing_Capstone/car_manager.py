@@ -11,13 +11,16 @@ class CarManager:
         self.cars = []
 
     def initialize_cars(self):
-        for i in range(random.randint(1, 5)):
-            self.cars.append(Turtle(shape="square"))
-            self.cars[-1].shapesize(stretch_len=2, stretch_wid=1)
-            self.cars[-1].color(random.choice(COLORS))
-            self.cars[-1].penup()
-            self.cars[-1].goto(310, random.randint(-280, 280))
-            self.cars[-1].setheading(180)
+        random_chance = random.randint(1, 6)
+        if random_chance == 6 or random_chance == 1:
+            new_car = Turtle(shape="square")
+            new_car.shapesize(stretch_len=2, stretch_wid=1)
+            new_car.color(random.choice(COLORS))
+            new_car.penup()
+            new_car.goto(300, random.randint(-250, 250))
+            new_car.setheading(180)
+
+            self.cars.append(new_car)
 
     def move_cars(self):
         for car in self.cars:

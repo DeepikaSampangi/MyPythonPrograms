@@ -16,7 +16,7 @@ class Player(Turtle):
 
     def up(self):
         new_y = self.ycor() + MOVE_DISTANCE
-        if new_y < 285:
+        if new_y < FINISH_LINE_Y:
             self.goto(self.xcor(), new_y)
 
     def reset(self):
