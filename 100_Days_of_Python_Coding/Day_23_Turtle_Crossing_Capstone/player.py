@@ -11,5 +11,10 @@ class Player(Turtle):
         self.shape("turtle")
         self.color("black")
         self.penup()
-        self.goto(0, -280)
+        self.goto(STARTING_POSITION)
         self.setheading(90)
+
+    def up(self):
+        new_y = self.ycor() + MOVE_DISTANCE
+        if new_y < 275:
+            self.goto(self.xcor(), new_y)
