@@ -27,7 +27,7 @@ print(f"Avg temp : {sum(temp_list)/len(temp_list)}")
 
 print(f'Avg : {data["temp"].mean()}')
 
-print(f'Max temp : {max(temp_list)}')
+print(f"Max temp : {max(temp_list)}")
 print(f'Max temp : {data["temp"].max()}')
 
 # Get Data in a Row
@@ -39,16 +39,13 @@ print(f'{data[data["temp"] == data["temp"].max()]}')
 # Monday's temp in Fahrenheit
 
 monday = data[data["day"] == "Monday"]
-fahren_temp = (int(monday.temp)*(9/5)) + 32
+fahren_temp = (int(monday.temp) * (9 / 5)) + 32
 print(f"Monday temp in fahrenheit {fahren_temp}")
 
 
 # Create Dataframe from Scratch
 
-data_dict = {
-    "students":["Amy", "Jack", "Thea"],
-    "scores": [76,56,65]
-}
+data_dict = {"students": ["Amy", "Jack", "Thea"], "scores": [76, 56, 65]}
 
 data = pd.DataFrame(data_dict)
 data.to_csv("new_data.csv")
