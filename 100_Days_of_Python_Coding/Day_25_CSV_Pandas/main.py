@@ -29,3 +29,15 @@ print(f'Avg : {data["temp"].mean()}')
 
 print(f'Max temp : {max(temp_list)}')
 print(f'Max temp : {data["temp"].max()}')
+
+# Get Data in a Row
+print(data[data["day"] == "Monday"])
+
+# Max Temp row
+print(f'{data[data["temp"] == data["temp"].max()]}')
+
+# Monday's temp in Fahrenheit
+
+monday = data[data["day"] == "Monday"]
+fahren_temp = (int(monday.temp)*(9/5)) + 32
+print(f"Monday temp in fahrenheit {fahren_temp}")
