@@ -4,3 +4,8 @@ new_list = [n + 1 for n in numbers]
 
 print(f"Numbers : {numbers}")
 print(f"Numbers New List : {new_list}")
+
+name = "Ananya"
+new_name_list = [letter for letter in name]
+print(new_name_list)
+print(list(name))
