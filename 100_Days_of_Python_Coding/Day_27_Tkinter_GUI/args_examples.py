@@ -6,3 +6,14 @@ def add(*args):
 
 
 print(add(1, 2, 3, 4, 5, 6))
+
+
+def calculate(n, **kwargs):
+    print(kwargs)
+    print(type(kwargs))
+    n += kwargs["add"]
+    n *= kwargs["mul"]
+    print(n)
+
+
+calculate(2, add=2, mul=4)
