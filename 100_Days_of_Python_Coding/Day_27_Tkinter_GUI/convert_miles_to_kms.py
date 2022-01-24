@@ -2,35 +2,29 @@ from tkinter import *
 
 
 def convert():
-    miles = input.get()
-    my_label4 = Label(text=round(int(miles) * 1.6), font=("Arial", 12, "bold"))
-    my_label4.grid(column=2, row=3)
-    # my_label4.config(padx=50, pady=50)
+    miles = miles_input.get()
+    kms = Label(text=round(int(miles) * 1.609), font=("Arial", 12, "bold"))
+    kms.grid(column=1, row=1)
 
 
 window = Tk()
 window.title("Miles to Km Converter")
-window.minsize(width=250, height=100)
+window.config(padx=20, pady=20)
 
 # Entry
-input = Entry(width=10)
-input.grid(column=2, row=2)
+miles_input = Entry(width=10)
+miles_input.grid(column=1, row=0)
 
-my_label1 = Label(text="Miles", font=("Arial", 12, "bold"))
-my_label1.grid(column=3, row=2)
-# my_label1.config(padx=50, pady=50)
+miles_label = Label(text="Miles", font=("Arial", 12, "bold"))
+miles_label.grid(column=2, row=0)
 
-my_label2 = Label(text="is equal to", font=("Arial", 12, "bold"))
-my_label2.grid(column=1, row=3)
-# my_label2.config(padx=50, pady=50)
+is_equal_label = Label(text="is equal to", font=("Arial", 12, "bold"))
+is_equal_label.grid(column=0, row=1)
 
-
-my_label3 = Label(text="km", font=("Arial", 12, "bold"))
-my_label3.grid(column=3, row=3)
-# my_label3.config(padx=50, pady=50)
-
+kms_label = Label(text="km", font=("Arial", 12, "bold"))
+kms_label.grid(column=2, row=1)
 
 button = Button(text="Calculate", command=convert)
-button.grid(column=2, row=4)
+button.grid(column=1, row=2)
 
 window.mainloop()
