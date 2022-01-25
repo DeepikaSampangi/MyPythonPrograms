@@ -2,6 +2,7 @@ from cgitb import text
 import os
 from tkinter import *
 import time
+import math
 
 curr_dir = os.path.dirname(__file__)
 # ---------------------------- CONSTANTS ------------------------------- #
@@ -18,12 +19,18 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
-    count_down(5)
+    count_down(5 * 60)
+
+
+def reset_timer():
+    pass
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    canvas.itemconfig(timer_text, text=count)
+    count_min = math.floor(count / 60)
+    count_sec = count % 60
+    canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
         window.after(1000, count_down, count - 1)
 
@@ -47,7 +54,7 @@ canvas.grid(column=1, row=1)
 start_button = Button(text="Start", highlightthickness=0, command=start_timer)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", highlightthickness=0)
+reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer)
 reset_button.grid(column=2, row=2)
 
 tick_labels = Label(text="✓", bg=YELLOW, fg=GREEN)
