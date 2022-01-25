@@ -12,17 +12,21 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 25
+WORK_MIN = 10
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 REPS = 0
-TICK_Label = "✓"
+timer = None
 # ---------------------------- TIMER RESET ------------------------------- #
 
 
 def reset_timer():
+    global REPS
     REPS = 0
+    window.after_cancel(timer)
+    title_label.config(text="Timer", fg=GREEN)
     canvas.itemconfig(timer_text, text=f"00:00")
+    tick_labels.config(text="")
 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
@@ -37,7 +41,6 @@ def start_timer():
 
     if REPS in range(1, 9, 2):
         title_label.config(text="Work Time", fg=GREEN)
-        tick_labels.config(text=TICK_Label * REPS)
         count_down(work_sec)
     elif REPS in range(2, 8, 2):
         title_label.config(text="Short Break", fg=PINK)
@@ -57,9 +60,12 @@ def count_down(count):
         count_min = f"0{count_min}"
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global timer
+        timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
+        marks = "✓" * math.floor(REPS / 2)
+        tick_labels.config(text=marks)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -84,7 +90,7 @@ start_button.grid(column=0, row=2)
 reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer)
 reset_button.grid(column=2, row=2)
 
-tick_labels = Label(text="✓", bg=YELLOW, fg=GREEN)
+tick_labels = Label(bg=YELLOW, fg=GREEN)
 tick_labels.grid(column=1, row=3)
 
 window.mainloop()
