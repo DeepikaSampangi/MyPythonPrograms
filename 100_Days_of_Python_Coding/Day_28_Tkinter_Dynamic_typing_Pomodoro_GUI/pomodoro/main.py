@@ -16,11 +16,13 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 REPS = 0
+TICK_Label = "✓"
 # ---------------------------- TIMER RESET ------------------------------- #
 
 
 def reset_timer():
-    pass
+    REPS = 0
+    canvas.itemconfig(timer_text, text=f"00:00")
 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
@@ -35,6 +37,7 @@ def start_timer():
 
     if REPS in range(1, 9, 2):
         title_label.config(text="Work Time", fg=GREEN)
+        tick_labels.config(text=TICK_Label * REPS)
         count_down(work_sec)
     elif REPS in range(2, 8, 2):
         title_label.config(text="Short Break", fg=PINK)
