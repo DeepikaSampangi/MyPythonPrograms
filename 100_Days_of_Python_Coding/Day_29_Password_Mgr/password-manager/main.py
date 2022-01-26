@@ -11,12 +11,11 @@ curr_dir = os.path.dirname(__file__)
 
 window = Tk()
 window.title("Password Manager")
-window.minsize(width=500, height=500)
-window.config(padx=20)
+window.config(padx=20, pady=20)
 
 canvas = Canvas(width=200, height=200)
 pwd_img = PhotoImage(file=curr_dir + "/logo.png")
-canvas.create_image(200, 200, image=pwd_img)
+canvas.create_image(100, 100, image=pwd_img)
 canvas.grid(column=1, row=1)
 
 window.mainloop()
