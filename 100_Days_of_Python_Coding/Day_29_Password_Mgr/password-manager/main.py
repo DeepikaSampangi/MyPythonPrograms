@@ -1,7 +1,10 @@
 from tkinter import *
 from tkinter import messagebox
 from random import choice, randint, shuffle
-import pyperclip
+import os
+
+curr_dir = os.path.dirname(__file__)
+# import pyperclip
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -73,7 +76,7 @@ def generate_password():
 
     password = "".join(password_list)
     password_entry.insert(0, password)
-    pyperclip.copy(password)
+    # pyperclip.copy(password)
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -107,7 +110,7 @@ window.title("Password Manager")
 window.config(padx=50, pady=50)
 
 canvas = Canvas(height=200, width=200)
-logo_img = PhotoImage(file="logo.png")
+logo_img = PhotoImage(file=curr_dir + "/logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
@@ -125,7 +128,7 @@ website_entry.grid(row=1, column=1, columnspan=2)
 website_entry.focus()
 email_entry = Entry(width=35)
 email_entry.grid(row=2, column=1, columnspan=2)
-email_entry.insert(0, "angela@gmail.com")
+email_entry.insert(0, "xyz@gmail.com")
 password_entry = Entry(width=21)
 password_entry.grid(row=3, column=1)
 
