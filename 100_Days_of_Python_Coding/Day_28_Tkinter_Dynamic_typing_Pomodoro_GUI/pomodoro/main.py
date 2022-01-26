@@ -1,8 +1,6 @@
-from cgitb import text
 import os
 from pickle import GLOBAL
 from tkinter import *
-import time
 import math
 
 curr_dir = os.path.dirname(__file__)
