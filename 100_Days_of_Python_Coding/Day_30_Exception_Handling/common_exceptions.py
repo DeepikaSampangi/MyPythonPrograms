@@ -24,5 +24,8 @@
 #     print("There was an error")
 # else:
 #     # Do this if there were no exceptions
+# content = file.read()
+# print(content)
 # finally:
 #     # Do this no matter what happens
+# file.close()
