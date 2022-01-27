@@ -29,3 +29,13 @@
 # finally:
 #     # Do this no matter what happens
 # file.close()
+
+# Raising Exceptions
+
+ht = float(input("Heigth: "))
+wt = int(input("Weight: "))
+if ht > 3:
+    raise ValueError("Invalid Heigth Value")
+bmi = wt / ht ** 2
+
+print(bmi)
