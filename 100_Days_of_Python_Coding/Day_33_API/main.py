@@ -43,6 +43,7 @@ def is_dark():
     if sunset <= time_now.hour <= sunrise:
         return True
 
+
 while True:
     time.sleep(60)
     if is_above() and is_dark():
