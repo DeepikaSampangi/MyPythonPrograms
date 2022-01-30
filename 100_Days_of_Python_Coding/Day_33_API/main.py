@@ -5,33 +5,45 @@
 # 5xx: I screwed Up
 
 import requests
-from datetime import  datetime
+import time
+from datetime import datetime
 
-MY_LAT = 20.593683
-MY_LONG = 78.962883
-# response = requests.get(url="http://api.open-notify.org/iss-now.json")
-#
-# response.raise_for_status()
-#
-# data = response.json()
-#
-# latitude = data["iss_position"]["latitude"]
-# longitude = data["iss_position"]["longitude"]
-# iss_position = (longitude, latitude)
-#
-# print(iss_position)
+MY_LAT = 20
+MY_LONG = 78
 
-parameters = {
-    "lat": MY_LAT,
-    "lng": MY_LONG,
-    "formatted": 0
-}
-response = requests.get(url="https://api.sunrise-sunset.org/json", params=parameters)
-response.raise_for_status()
-data = response.json()
-sunrise = data["results"]["sunrise"].split("T")[1].split(":")[0]
-sunset = data["results"]["sunset"].split("T")[1].split(":")[0]
-print(sunrise)
-print(sunset)
-time_now = datetime.now()
-print(time_now.hour)
+
+def is_above():
+    response = requests.get(url="http://api.open-notify.org/iss-now.json")
+    response.raise_for_status()
+    data = response.json()
+
+    latitude = float(data["iss_position"]["latitude"])
+    longitude = float(data["iss_position"]["longitude"])
+    iss_position = (longitude, latitude)
+
+    if iss_position[0] in range(MY_LAT - 5, MY_LAT + 5) and iss_position[1] in range(
+        MY_LONG - 5, MY_LONG + 5
+    ):
+        return True
+
+
+def is_dark():
+    parameters = {"lat": MY_LAT, "lng": MY_LONG, "formatted": 0}
+    response = requests.get(
+        url="https://api.sunrise-sunset.org/json", params=parameters
+    )
+    response.raise_for_status()
+    data = response.json()
+
+    sunrise = int(data["results"]["sunrise"].split("T")[1].split(":")[0])
+    sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
+
+    time_now = datetime.now()
+
+    if sunset <= time_now.hour <= sunrise:
+        return True
+
+while True:
+    time.sleep(60)
+    if is_above() and is_dark():
+        print("Look Up in the Sky, Sent over email")
