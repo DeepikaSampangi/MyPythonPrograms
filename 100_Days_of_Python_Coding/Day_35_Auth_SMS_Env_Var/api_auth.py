@@ -1,6 +1,6 @@
 import requests
 
-api_key = "34ee58694a578e7f8c18874e8f0f0994"
+api_key = ""
 OWM_endpoint = "https://api.openweathermap.org/data/2.5/onecall"
 
 weather_params = {
