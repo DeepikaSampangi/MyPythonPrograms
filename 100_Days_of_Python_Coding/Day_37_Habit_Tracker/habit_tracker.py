@@ -47,5 +47,12 @@ pixel_config = {
 update_pixel_data = {
     "quantity": "6.0"
 }
-update_pixel_resp = requests.put(url=f"{pixel_endpoint}/20220202", json=update_pixel_data, headers=auth_header)
-print(update_pixel_resp.text)
+# update_pixel_resp = requests.put(url=f"{pixel_endpoint}/20220202", json=update_pixel_data, headers=auth_header)
+# print(update_pixel_resp.text)
+
+## Delete a Pixel
+
+delete_endpoint = f"{pixel_endpoint}/20220202"
+
+delete_resp = requests.delete(url=delete_endpoint, headers=auth_header)
+print(delete_resp.text)
