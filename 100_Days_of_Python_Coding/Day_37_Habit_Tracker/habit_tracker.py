@@ -24,7 +24,7 @@ graph_config = {
     "name": " Cycling Graph",
     "unit": "Km",
     "type": "float",
-    "color":"ajisai"
+    "color": "ajisai"
 }
 
 auth_header = {
@@ -39,5 +39,13 @@ pixel_config = {
     "date": today.strftime("%Y%m%d"),
     "quantity": "2.5"
 }
-pixel_resp = requests.post(url=pixel_endpoint, json=pixel_config, headers=auth_header)
-print(pixel_resp.text)
+# pixel_resp = requests.post(url=pixel_endpoint, json=pixel_config, headers=auth_header)
+# print(pixel_resp.text)
+
+## Update a Pixel
+
+update_pixel_data = {
+    "quantity": "6.0"
+}
+update_pixel_resp = requests.put(url=f"{pixel_endpoint}/20220202", json=update_pixel_data, headers=auth_header)
+print(update_pixel_resp.text)
