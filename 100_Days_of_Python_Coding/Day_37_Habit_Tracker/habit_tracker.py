@@ -33,10 +33,11 @@ auth_header = {
 # graph_resp = requests.post(url=graph_endpoint, json=graph_config, headers=auth_header)
 # print(graph_resp.text)
 
+today = dt.now().date()
 pixel_endpoint = f"{pixela_url}/{USERNAME}/graphs/{GRAPH_ID}"
 pixel_config = {
-    "date": "20220202",
-    "quantity": "5.0"
+    "date": today.strftime("%Y%m%d"),
+    "quantity": "2.5"
 }
 pixel_resp = requests.post(url=pixel_endpoint, json=pixel_config, headers=auth_header)
 print(pixel_resp.text)
