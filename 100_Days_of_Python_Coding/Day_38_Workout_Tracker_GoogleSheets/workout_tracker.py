@@ -25,7 +25,7 @@ parameters = {
     "gender": GENDER,
     "weight_kg": WEIGHT_KG,
     "height_cm": HEIGHT_CM,
-    "age": AGE
+    "age": AGE,
 }
 
 response = requests.post(exercise_endpoint, json=parameters, headers=headers)
@@ -42,32 +42,27 @@ for exercise in result["exercises"]:
             "time": now_time,
             "exercise": exercise["name"].title(),
             "duration": exercise["duration_min"],
-            "calories": exercise["nf_calories"]
+            "calories": exercise["nf_calories"],
         }
     }
 
-    #No Auth
+    # No Auth
     sheet_response = requests.post(sheet_endpoint, json=sheet_inputs)
 
-
-    #Basic Auth
+    # Basic Auth
     sheet_response = requests.post(
         sheet_endpoint,
         json=sheet_inputs,
         auth=(
             os.environ["USERNAME"],
             os.environ["PASSWORD"],
-        )
+        ),
     )
 
-    #Bearer Token
-    bearer_headers = {
-    "Authorization": f"Bearer {os.environ['TOKEN']}"
-    }
+    # Bearer Token
+    bearer_headers = {"Authorization": f"Bearer {os.environ['TOKEN']}"}
     sheet_response = requests.post(
-        sheet_endpoint,
-        json=sheet_inputs,
-        headers=bearer_headers
+        sheet_endpoint, json=sheet_inputs, headers=bearer_headers
     )
 
     print(sheet_response.text)
