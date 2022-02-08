@@ -1,10 +1,9 @@
 import requests
 
-SHEETY_PRICES_ENDPOINT = YOUR ENDPOINT HERE
+SHEETY_PRICES_ENDPOINT = "YOUR ENDPOINT HERE"
 
 
 class DataManager:
-
     def __init__(self):
         self.destination_data = {}
 
@@ -21,13 +20,8 @@ class DataManager:
     # to update the Google Sheet with the IATA codes. (Do this using code).
     def update_destination_codes(self):
         for city in self.destination_data:
-            new_data = {
-                "price": {
-                    "iataCode": city["iataCode"]
-                }
-            }
+            new_data = {"price": {"iataCode": city["iataCode"]}}
             response = requests.put(
-                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}",
-                json=new_data
+                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}", json=new_data
             )
             print(response.text)
