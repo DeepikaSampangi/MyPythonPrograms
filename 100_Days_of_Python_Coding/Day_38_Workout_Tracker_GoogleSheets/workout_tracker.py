@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime as dt
 import os
 
 GENDER = "Female"
@@ -32,8 +32,8 @@ response = requests.post(exercise_endpoint, json=parameters, headers=headers)
 result = response.json()
 print(result)
 
-today_date = datetime.now().strftime("%d/%m/%Y")
-now_time = datetime.now().strftime("%X")
+today_date = dt.now().strftime("%d/%m/%Y")
+now_time = dt.now().strftime("%X")
 
 for exercise in result["exercises"]:
     sheet_inputs = {
