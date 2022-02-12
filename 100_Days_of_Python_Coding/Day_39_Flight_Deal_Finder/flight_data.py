@@ -1,14 +1,11 @@
-import pandas as pd
-import os
-
-curr_dir = os.path.dirname(__file__)
-
 class FlightData:
-    #This class is responsible for structuring the flight data.
-    def __init__(self):
-        self.flight_deals = pd.read_csv(curr_dir+"/flight_deal_prices.csv")
+    """This class is responsible for structuring the flight data."""
 
-    def get_flight_deals(self):
-        print(self.flight_deals.head())
-
-FlightData().get_flight_deals()
+    def __init__(self, price, origin_city, origin_airport, destination_city, destination_airport, out_date, return_date):
+        self.price = price
+        self.origin_city = origin_city
+        self.origin_airport = origin_airport
+        self.destination_city = destination_city
+        self.destination_airport = destination_airport
+        self.out_date = out_date
+        self.return_date = return_date
