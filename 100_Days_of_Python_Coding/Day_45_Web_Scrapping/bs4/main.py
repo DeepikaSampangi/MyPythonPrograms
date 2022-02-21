@@ -6,4 +6,8 @@ with open("website.html") as file:
 
 soup = BeautifulSoup(contents, "html.parser")
 
-print(soup.prettify())
+all_a_tags = soup.find_all(name="a")
+
+for tag in all_a_tags:
+    print(tag.getText())
+    print(tag.get("href"))
