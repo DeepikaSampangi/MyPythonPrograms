@@ -1,7 +1,7 @@
 class Stack:
 
     def __init__(self):
-        self.items = []
+        self.items: list = []
 
     def isEmpty(self):
         return self.items == []
@@ -15,11 +15,11 @@ class Stack:
     def peek(self):
         return self.items[len(self.items) - 1]
 
-    def size(self):
+    def size(self) -> int:
         return len(self.items)
 
 
-s = Stack()
+s: Stack = Stack()
 print(s.isEmpty())
 
 s.push(10)
