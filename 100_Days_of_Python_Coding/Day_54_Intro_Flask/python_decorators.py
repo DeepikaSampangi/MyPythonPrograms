@@ -54,3 +54,9 @@ def say_hello():
 
 
 say_hello()
+
+def say_greeting():
+    print("How are you?")
+
+dec_fun = delay_deco(say_greeting)
+dec_fun()
