@@ -41,4 +41,5 @@ def calculator():
         else:
             break
 
+
 calculator()

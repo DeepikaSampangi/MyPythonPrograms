@@ -9,7 +9,9 @@ PHONE = "YOUR PHONE NUMBER"
 
 chrome_driver_path = "YOUR CHROME DRIVER PATH"
 driver = webdriver.Chrome(chrome_driver_path)
-driver.get("https://www.linkedin.com/jobs/search/?f_LF=f_AL&geoId=102257491&keywords=marketing%20intern&location=London%2C%20England%2C%20United%20Kingdom&redirect=false&position=1&pageNum=0")
+driver.get(
+    "https://www.linkedin.com/jobs/search/?f_LF=f_AL&geoId=102257491&keywords=marketing%20intern&location=London%2C%20England%2C%20United%20Kingdom&redirect=false&position=1&pageNum=0"
+)
 
 time.sleep(2)
 sign_in_button = driver.find_element("Sign in")
@@ -38,12 +40,12 @@ for listing in all_listings:
         phone = driver.find_element("fb-single-line-text__input")
         if phone.text == "":
             phone.send_keys(PHONE)
-        
+
         submit_button = driver.find_element("footer button")
         if submit_button.get_attribute("data-control-name") == "continue_unify":
             close_button = driver.find_element("artdeco-modal__dismiss")
             close_button.click()
-            
+
             time.sleep(2)
             discard_button = driver.find_element("artdeco-modal__confirm-dialog-btn")[1]
             discard_button.click()
@@ -62,4 +64,3 @@ for listing in all_listings:
 
 time.sleep(5)
 driver.quit()
-

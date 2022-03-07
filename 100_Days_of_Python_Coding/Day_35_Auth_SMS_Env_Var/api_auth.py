@@ -2,8 +2,8 @@ import requests
 import os
 from twilio.rest import Client
 
-account_sid = os.environ['TWILIO_ACCOUNT_SID']
-auth_token = os.environ['TWILIO_AUTH_TOKEN']
+account_sid = os.environ["TWILIO_ACCOUNT_SID"]
+auth_token = os.environ["TWILIO_AUTH_TOKEN"]
 client = Client(account_sid, auth_token)
 
 
@@ -14,7 +14,7 @@ weather_params = {
     "lat": 51.759050,
     "lon": 19.458600,
     "appid": api_key,
-    "exclude": "current,minutely,daily"
+    "exclude": "current,minutely,daily",
 }
 response = requests.get(url=OWM_endpoint, params=weather_params)
 response.raise_for_status()
@@ -30,9 +30,6 @@ for hour_data in weather_slice:
             will_rain = True
 
 if will_rain:
-    message = client.messages \
-        .create(
-        body="Remember to bring an Umbrella",
-        from_='+15017122661',
-        to='+15558675310'
+    message = client.messages.create(
+        body="Remember to bring an Umbrella", from_="+15017122661", to="+15558675310"
     )

@@ -6,7 +6,7 @@ print(11 % 2)
 print(2 ** 3)
 print(7 // 3)
 
-# PEDMAS 
+# PEDMAS
 # Left to Right
 
-print(3*3+3/3-3)
+print(3 * 3 + 3 / 3 - 3)

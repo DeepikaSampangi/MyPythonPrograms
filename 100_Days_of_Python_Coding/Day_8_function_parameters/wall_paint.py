@@ -1,5 +1,6 @@
 import math
 
+
 def paint_calc(height: int, width: int, cover: int):
     no_of_cans = (height * width) / cover
     return math.ceil(no_of_cans)

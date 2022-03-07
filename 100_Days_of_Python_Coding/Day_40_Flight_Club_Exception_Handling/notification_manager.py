@@ -9,8 +9,8 @@ MAIL_PROVIDER_SMTP_ADDRESS = "YOUR EMAIL PROVIDER SMTP ADDRESS" "smtp.gmail.com"
 MY_EMAIL = "YOUR EMAIL"
 MY_PASSWORD = "YOUR PASSWORD"
 
-class NotificationManager:
 
+class NotificationManager:
     def __init__(self):
         self.client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
@@ -30,5 +30,7 @@ class NotificationManager:
                 connection.sendmail(
                     from_addr=MY_EMAIL,
                     to_addrs=email,
-                    msg=f"Subject:New Low Price Flight!\n\n{message}\n{google_flight_link}".encode('utf-8')
+                    msg=f"Subject:New Low Price Flight!\n\n{message}\n{google_flight_link}".encode(
+                        "utf-8"
+                    ),
                 )
