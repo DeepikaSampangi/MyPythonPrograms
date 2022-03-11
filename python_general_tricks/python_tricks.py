@@ -7,4 +7,3 @@ print(sorted(list(set(arr))))
 
 
 ##
-
