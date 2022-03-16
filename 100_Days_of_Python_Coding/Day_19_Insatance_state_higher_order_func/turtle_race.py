@@ -1,6 +1,6 @@
-from turtle import Turtle, Screen, width
 import random
 import turtle
+from turtle import Screen, Turtle, width
 
 colors = ["red", "orange", "green", "blue", "purple", "yellow"]
 is_race_on = False

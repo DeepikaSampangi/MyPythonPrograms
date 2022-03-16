@@ -4,9 +4,10 @@
 # 4xx: You Screwed Up
 # 5xx: I screwed Up
 
-import requests
 import time
 from datetime import datetime
+
+import requests
 
 MY_LAT = 20
 MY_LONG = 78

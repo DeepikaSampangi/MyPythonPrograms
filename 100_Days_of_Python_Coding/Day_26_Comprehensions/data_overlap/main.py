@@ -1,7 +1,7 @@
 # Write your code above 👆
 
-import os
 import json
+import os
 
 curr_dir = os.path.dirname(__file__)
 

@@ -1,7 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import ElementClickInterceptedException
 import time
+
+from selenium import webdriver
+from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.webdriver.common.keys import Keys
 
 CHROME_DRIVER_PATH = "YOUR CHROM DRIVER PATH"
 SIMILAR_ACCOUNT = "buzzfeedtasty"

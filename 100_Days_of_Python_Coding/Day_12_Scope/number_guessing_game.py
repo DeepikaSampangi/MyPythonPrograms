@@ -1,4 +1,5 @@
 import random
+
 from num_guess_art import logo
 
 actual = random.choice([i for i in range(1, 101)])

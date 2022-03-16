@@ -1,4 +1,5 @@
 from random import randint
+
 from num_guess_art import logo
 
 EASY_LEVEL_TURNS = 10

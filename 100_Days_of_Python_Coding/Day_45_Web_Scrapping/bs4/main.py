@@ -1,5 +1,5 @@
-from bs4 import BeautifulSoup
 import lxml
+from bs4 import BeautifulSoup
 
 with open("website.html") as file:
     contents = file.read()

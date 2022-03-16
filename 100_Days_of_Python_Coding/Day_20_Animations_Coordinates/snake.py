@@ -1,6 +1,6 @@
 import imp
-from turtle import Turtle, Screen
 import time
+from turtle import Screen, Turtle
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DIST = 20

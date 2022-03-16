@@ -1,7 +1,7 @@
+import os
+from random import choice, randint, shuffle
 from tkinter import *
 from tkinter import messagebox
-from random import choice, randint, shuffle
-import os
 
 curr_dir = os.path.dirname(__file__)
 # import pyperclip

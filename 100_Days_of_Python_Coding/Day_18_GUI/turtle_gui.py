@@ -1,5 +1,5 @@
 import random
-from turtle import Turtle, Screen
+from turtle import Screen, Turtle
 
 tim = Turtle()
 

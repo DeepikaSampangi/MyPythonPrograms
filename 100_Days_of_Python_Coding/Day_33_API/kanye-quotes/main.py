@@ -1,6 +1,7 @@
-from tkinter import *
-import requests
 import os
+from tkinter import *
+
+import requests
 
 curr_dir = os.path.dirname(__file__)
 

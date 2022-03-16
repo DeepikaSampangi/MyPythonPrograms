@@ -1,5 +1,5 @@
-from twilio.rest import Client
 from decouple import config
+from twilio.rest import Client
 
 TWILIO_SID = config("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")

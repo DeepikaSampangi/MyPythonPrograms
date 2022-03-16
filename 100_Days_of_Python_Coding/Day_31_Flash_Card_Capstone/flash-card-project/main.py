@@ -1,8 +1,9 @@
 import os
 import random
-import pandas as pd
 from tkinter import *
-from PIL import ImageTk, Image
+
+import pandas as pd
+from PIL import Image, ImageTk
 
 curr_dir = os.path.dirname(__file__)
 BACKGROUND_COLOR = "#B1DDC6"

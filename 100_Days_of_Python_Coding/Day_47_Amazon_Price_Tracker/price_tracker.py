@@ -1,6 +1,7 @@
-import requests
-import lxml
 import smtplib
+
+import lxml
+import requests
 from bs4 import BeautifulSoup
 
 url = "https://www.amazon.com/Duo-Evo-Plus-esterilizadora-vaporizador/dp/B07W55DDFB/ref=sr_1_4?qid=1597660904"

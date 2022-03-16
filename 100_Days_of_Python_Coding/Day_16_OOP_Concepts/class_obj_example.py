@@ -3,7 +3,7 @@
 # timmy = turtle.Turtle()
 # print(timmy)
 
-from turtle import Turtle, Screen
+from turtle import Screen, Turtle
 
 timmy = Turtle()
 print(timmy)

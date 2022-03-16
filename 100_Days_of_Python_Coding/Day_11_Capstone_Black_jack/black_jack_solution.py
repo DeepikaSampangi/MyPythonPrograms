@@ -33,8 +33,9 @@
 # Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 # 11 is the Ace.
 import random
-from replit import clear
+
 from black_jack_art import logo
+from replit import clear
 
 
 def deal_card():

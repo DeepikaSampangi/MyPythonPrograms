@@ -1,5 +1,5 @@
-import turtle as turtle_module
 import random
+import turtle as turtle_module
 
 turtle_module.colormode(255)
 tim = turtle_module.Turtle()

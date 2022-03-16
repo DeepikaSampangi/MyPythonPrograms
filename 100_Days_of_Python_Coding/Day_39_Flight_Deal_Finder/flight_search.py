@@ -1,6 +1,6 @@
 import requests
-from flight_data import FlightData
 from decouple import config
+from flight_data import FlightData
 
 TEQUILA_ENDPOINT = "https://tequila-api.kiwi.com"
 TEQUILA_API_KEY = config("TEQUILA_API")

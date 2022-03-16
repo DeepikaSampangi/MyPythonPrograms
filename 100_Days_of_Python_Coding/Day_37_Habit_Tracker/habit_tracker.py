@@ -1,5 +1,6 @@
-import requests
 from datetime import datetime as dt
+
+import requests
 
 USERNAME = "dsam"
 TOKEN = "e1ghtch@rs"

@@ -1,6 +1,7 @@
 import random
-from higher_lower_art import logo, vs
+
 from game_data import data
+from higher_lower_art import logo, vs
 
 print(logo)
 data_len = len(data)

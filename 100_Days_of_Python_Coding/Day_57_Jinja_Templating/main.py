@@ -1,6 +1,6 @@
+import requests
 from flask import Flask, render_template
 from post import Post
-import requests
 
 posts = requests.get("https://api.npoint.io/5abcca6f4e39b4955965").json()
 post_objects = []

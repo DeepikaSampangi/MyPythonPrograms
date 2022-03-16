@@ -1,7 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
 import time
+
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 
 ACCOUNT_EMAIL = "YOUR LOGIN EMAIL"
 ACCOUNT_PASSWORD = "YOUR LOGIN PASSWORD"
