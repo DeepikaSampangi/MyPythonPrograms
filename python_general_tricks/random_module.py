@@ -1,6 +1,5 @@
 import random
 
-
 print("This prints a random float between 0.0 and 1.0", random.random())
 
 print("This prints a random float between a and b", random.uniform(3.5, 10.0))
