@@ -11,7 +11,7 @@ for post in posts:
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def get_all_posts():
     return render_template("index.html", all_posts=post_objects)
 
@@ -27,5 +27,3 @@ def show_post(index):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
