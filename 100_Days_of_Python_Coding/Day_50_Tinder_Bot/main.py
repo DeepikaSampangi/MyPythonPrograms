@@ -1,10 +1,8 @@
 from time import sleep
 
 from selenium import webdriver
-from selenium.common.exceptions import (
-    ElementClickInterceptedException,
-    NoSuchElementException,
-)
+from selenium.common.exceptions import (ElementClickInterceptedException,
+                                        NoSuchElementException)
 from selenium.webdriver.common.keys import Keys
 
 FB_EMAIL = "YOUR FACEBOOK LOGIN EMAIL"
