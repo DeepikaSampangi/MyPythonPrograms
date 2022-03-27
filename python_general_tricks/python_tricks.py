@@ -5,5 +5,3 @@ print(set(arr))
 print(list(arr))
 print(sorted(list(set(arr))))
 
-
-##
