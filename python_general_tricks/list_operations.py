@@ -4,7 +4,7 @@ input_list: list = [1, 2, 3, 4, 5, 1, 3, 2, 3, 4, 1, 4, 5, 9, 0]
 
 print(max(set(input_list), key=input_list.count))
 
-# Create a soingle string from a list
+# Create a single string from a list
 
 input_list_str: list = ["Hello", "to", "the", "world"]
 
