@@ -4,4 +4,3 @@ arr = map(int, in_text.split())
 print(set(arr))
 print(list(arr))
 print(sorted(list(set(arr))))
-
