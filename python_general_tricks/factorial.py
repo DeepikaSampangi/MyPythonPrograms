@@ -6,3 +6,4 @@ def factorial(num):
 
 input_num = int(input("Enter a number"))
 print(f"Factorial of {input_num} is {factorial(input_num)}")
+
