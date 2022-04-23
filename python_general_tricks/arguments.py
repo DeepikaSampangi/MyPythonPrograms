@@ -3,4 +3,4 @@ def myFun(*argv):
         print(arg)
 
 
-myFun('Hello', 'World', 'Universe')
+myFun("Hello", "World", "Universe")

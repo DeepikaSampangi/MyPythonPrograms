@@ -1,4 +1,4 @@
-n=10
+n = 10
 
 for i in range(n, 0, -1):
-    print((n-i) * ' ' + i * '*')
+    print((n - i) * " " + i * "*")

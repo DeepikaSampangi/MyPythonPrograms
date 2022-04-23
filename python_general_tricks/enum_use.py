@@ -3,6 +3,7 @@ class EnumVal:
     Two = 2
     Three = 3
 
+
 print(EnumVal)
 print(EnumVal.One)
 print(EnumVal.Two)
