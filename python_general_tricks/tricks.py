@@ -11,3 +11,8 @@ year = (1996, 2004, 2010, 2022)
 month = ("sept", "march", "dec", "jan")
 day = (26, 10, 25, 1)
 print(list(zip(year, month, day)))
+
+
+# Transpose of Matrix
+input_matrix = [[10,21],[3,20],[16,28]]
+print(list(zip(*input_matrix)))
