@@ -20,3 +20,10 @@ print(list(zip(*input_matrix)))
 #Print n times
 input_str = "Hello"
 print(input_str*4)
+
+#Factors of a number
+
+num = 32
+for i in range(1, num+1):
+    if num%i == 0:
+        print(i)
