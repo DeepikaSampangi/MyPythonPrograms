@@ -6,3 +6,7 @@ print(val)
 # Cube od first 5 Odd Numbers
 arr = [i*3 for i in range(10) if i%2]
 print(arr)
+
+# Dict Comprehension
+dic = [(i, i*2) for i in range(10)]
+print(dict(dic))
