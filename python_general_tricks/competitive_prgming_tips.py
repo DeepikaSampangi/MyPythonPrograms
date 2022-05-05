@@ -10,3 +10,6 @@ print(arr)
 # Dict Comprehension
 dic = [(i, i*2) for i in range(10)]
 print(dict(dic))
+
+# Using Map
+print(list(map(lambda x: x*2, range(10))))
