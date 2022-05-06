@@ -13,3 +13,6 @@ print(dict(dic))
 
 # Using Map
 print(list(map(lambda x: x*2, range(10))))
+
+# Using filter
+print(list(map(lambda x: x*2, range(10))))
