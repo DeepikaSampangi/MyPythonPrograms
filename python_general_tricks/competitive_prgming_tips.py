@@ -16,3 +16,7 @@ print(list(map(lambda x: x*2, range(10))))
 
 # Using filter
 print(list(map(lambda x: x*2, range(10))))
+
+# Using Reduce
+from functools import reduce
+print(reduce(lambda x,y: x+y, range(10)))
