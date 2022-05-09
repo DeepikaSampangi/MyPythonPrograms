@@ -24,3 +24,7 @@ print(reduce(lambda x,y: x+y, range(10)))
 # Random Numbers
 import random
 print(random.choice(range(1, 10)))
+
+#Permutations
+import itertools
+itertools.permutations('ABCD', 2)
