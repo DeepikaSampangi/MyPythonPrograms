@@ -28,3 +28,7 @@ print(random.choice(range(1, 10)))
 #Permutations
 import itertools
 itertools.permutations('ABCD', 2)
+
+#Char frequency
+from collections import Counter
+print(dict(Counter("ababacd")))
