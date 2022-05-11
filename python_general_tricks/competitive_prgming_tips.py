@@ -32,3 +32,8 @@ itertools.permutations('ABCD', 2)
 #Char frequency
 from collections import Counter
 print(dict(Counter("ababacd")))
+
+# List Comprehension
+msg = "ababcd"
+dic = [(i, msg.count(i)) for i in set(msg)]
+print(dict(dic))
