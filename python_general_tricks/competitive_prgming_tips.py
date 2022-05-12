@@ -37,3 +37,11 @@ print(dict(Counter("ababacd")))
 msg = "ababcd"
 dic = [(i, msg.count(i)) for i in set(msg)]
 print(dict(dic))
+
+# Dict to list
+
+dic = {'a': 3, 'b': 2, 'c': 1, 'd': 1}
+# list of dictionary keys
+print(list(dic))
+# list of dictionary values
+print([v for k, v in dic.items()])
