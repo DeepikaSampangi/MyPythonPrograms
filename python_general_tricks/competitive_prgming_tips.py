@@ -48,3 +48,12 @@ print([v for k, v in dic.items()])
 # Decimal to Binary
 num = 9
 binary_num = bin(num).replace("0b", "")
+
+
+#Counter Package
+from collections import counter
+my_list = [1, 3, 4, 1, 2, 1, 1, 3, 4, 3, 5, 1, 2, 5, 3, 4, 5]
+
+counter = Counter(my_list)
+top_three_elements = counter.most_common(3)
+print(top_three_elements)
