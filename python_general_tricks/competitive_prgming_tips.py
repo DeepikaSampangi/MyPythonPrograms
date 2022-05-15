@@ -57,3 +57,10 @@ my_list = [1, 3, 4, 1, 2, 1, 1, 3, 4, 3, 5, 1, 2, 5, 3, 4, 5]
 counter = Counter(my_list)
 top_three_elements = counter.most_common(3)
 print(top_three_elements)
+
+
+# nth largest or smallest number
+import heapq
+grades = [110, 25, 38, 49, 20, 95, 33, 87, 80, 90]
+print(heapq.nlargest(3, grades))
+print(heapq.nsmallest(4, grades))
