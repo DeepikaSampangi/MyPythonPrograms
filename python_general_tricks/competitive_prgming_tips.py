@@ -14,6 +14,12 @@ print(dict(dic))
 # Using Map
 print(list(map(lambda x: x*2, range(10))))
 
+income = [10, 30, 75]
+def double_money(x):
+    return x*2
+updated_income = list(map(double_money, income))
+print(updated_income)
+
 # Using filter
 print(list(map(lambda x: x*2, range(10))))
 
