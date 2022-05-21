@@ -82,3 +82,10 @@ zip_1 = zip(stocks.values(), stocks.keys())
 print(sorted(zip_1))
 zip_2 = zip(stocks.keys(), stocks.values())
 print(sorted(zip_2))
+
+
+#List to Dictionary
+user = ["Peter","John","Sam"]
+age = [23,19,34]
+dictionary = dict(zip(user, age))
+print(dictionary)
