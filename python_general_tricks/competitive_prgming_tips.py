@@ -55,7 +55,6 @@ print([v for k, v in dic.items()])
 num = 9
 binary_num = bin(num).replace("0b", "")
 
-
 #Counter Package
 from collections import counter
 my_list = [1, 3, 4, 1, 2, 1, 1, 3, 4, 3, 5, 1, 2, 5, 3, 4, 5]
@@ -63,7 +62,6 @@ my_list = [1, 3, 4, 1, 2, 1, 1, 3, 4, 3, 5, 1, 2, 5, 3, 4, 5]
 counter = Counter(my_list)
 top_three_elements = counter.most_common(3)
 print(top_three_elements)
-
 
 # nth largest or smallest number
 import heapq
@@ -82,7 +80,6 @@ zip_1 = zip(stocks.values(), stocks.keys())
 print(sorted(zip_1))
 zip_2 = zip(stocks.keys(), stocks.values())
 print(sorted(zip_2))
-
 
 #List to Dictionary
 user = ["Peter","John","Sam"]
