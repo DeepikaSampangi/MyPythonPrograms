@@ -1,6 +1,6 @@
 # Reverse Order Tuple Second Value
 val = [('v', 3), ('a', 4), ('b', 2)]
-val.sort(key = lambda x: x[1], reverse=True)
+val.sort(key=lambda x: x[1], reverse=True)
 print(val)
 
 # Cube od first 5 Odd Numbers
@@ -56,7 +56,6 @@ num = 9
 binary_num = bin(num).replace("0b", "")
 
 #Counter Package
-from collections import counter
 my_list = [1, 3, 4, 1, 2, 1, 1, 3, 4, 3, 5, 1, 2, 5, 3, 4, 5]
 
 counter = Counter(my_list)
@@ -70,7 +69,6 @@ print(heapq.nlargest(3, grades))
 print(heapq.nsmallest(4, grades))
 
 #zip dict
-import heapq
 stocks = {'Goog': 520.54,
           'FB': 76.45,
           'YHOO': 39.28,
